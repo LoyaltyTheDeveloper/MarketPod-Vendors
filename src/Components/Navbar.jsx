@@ -23,8 +23,7 @@ function Navbar() {
            </div>
 
           <div className="flex px-[15px] rounded-[25px] py-[10px] text-[white] bg-[#31603D] items-center absolute right-6">
-            <button className="text-[14px] lg:text-[15px]">Vendors</button>
-            <MdKeyboardArrowDown className="size-[24px] lg:size-[25px]"/>
+            <button className="text-[12px] lg:text-[15px]">Shop Groceries</button>
           </div>
             </div>
         </div>

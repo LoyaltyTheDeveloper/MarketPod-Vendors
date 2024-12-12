@@ -39,7 +39,7 @@ function Landing() {
       <div className="mt-[30px] mb-[30px] flex flex-col items-center px-[20px]">
         <div className="text-[#31603D] font-semibold">What is MarketPod ?</div>
         <div className="text-[20px] font-bold lg:text-[30px]">Get your products discovered</div>
-        <div className="text-[15px] flex justify-center items-center">Our platform is a logistics and delivery service designed to help local market vendors in West Africa expand their reach and grow their businesses. By joining our network, vendors gain access to a wider customer base beyond the local market, allowing them to sell their fresh produce, pantry staples, and daily essentials to more people in their area. Our mission is to support local vendors by creating a reliable platform that connects them to customers who value fresh, local products but want the convenience of home delivery</div>
+        <div className="text-[15px] items-center text-center lg:px-[100px]">Our platform is a logistics and delivery service designed to help local market vendors in West Africa expand their reach and grow their businesses. By joining our network, vendors gain access to a wider customer base beyond the local market, allowing them to sell their fresh produce, pantry staples, and daily essentials to more people in their area. Our mission is to support local vendors by creating a reliable platform that connects them to customers who value fresh, local products but want the convenience of home delivery</div>
       </div>
     
 
@@ -54,7 +54,7 @@ function Landing() {
 
     <div className="flex flex-col justify-center items-center">
             <h5 className="mb-1 text-[20px] font-bold tracking-tight text-gray-900 text-[black] mt-[10px]">Register as a Vendor</h5>
-        <p className="mb-3 font-normal text-[black] px-[20px]">Sign up on our platform by providing essential information about your business, including your contact details, product categories, and location. Our team will guide you through the registration process to ensure everything is set up correctly.</p>
+        <p className="mb-3 font-normal text-[black] px-[20px] text-center">Sign up on our platform by providing essential information about your business, including your contact details, product categories, and location. Our team will guide you through the registration process to ensure everything is set up correctly.</p>
         
     </div>
 </div>
@@ -64,7 +64,7 @@ function Landing() {
 
     <div className="flex flex-col justify-center items-center">
             <h5 className="mb-1 text-[20px] font-bold tracking-tight text-gray-900 text-[black] mt-[10px]">Recieve and Manage Orders</h5>
-        <p className="mb-3 font-normal text-[black] px-[20px]">Once approved, you’ll begin receiving orders. Gather and package the items promptly, ensuring accuracy and quality. Once the order is ready, coordinate with the delivery team for a smooth handoff.</p>
+        <p className="mb-3 font-normal text-[black] px-[20px] text-center">Once approved, you’ll begin receiving orders. Gather and package the items promptly, ensuring accuracy and quality. Once the order is ready, coordinate with the delivery team for a smooth handoff.</p>
         
     </div>
 </div>
@@ -74,7 +74,7 @@ function Landing() {
 
     <div className="flex flex-col justify-center items-center">
             <h5 className="mb-1 text-[20px] font-bold tracking-tight text-gray-900 text-[black] mt-[10px]">Enjoy Your Digital Stall</h5>
-        <p className="mb-3 font-normal text-[black] px-[20px]">Our platform will handle the logistics and delivery, so all you need to do is prepare the items for pickup, and watch your business grow as you reach more customers.</p>
+        <p className="mb-3 font-normal text-[black] px-[20px] text-center">Our platform will handle the logistics and delivery, so all you need to do is prepare the items for pickup, and watch your business grow as you reach more customers.</p>
         
     </div>
 </div>
@@ -85,30 +85,30 @@ function Landing() {
 
       <div className="mt-[30px] mb-[30px]">
         <div className="flex justify-center text-[#31603D] font-semibold">You've got questions ? We've got answers</div>
-        <div className="flex justify-center font-bold text-[20px] mb-[20px]">Frequently Asked Questions !</div>
+        <div className="flex justify-center font-bold text-[20px] mb-[20px] lg:text-[25px]">Frequently Asked Questions !</div>
 
-        <div className="flex flex-col gap-[20px]">
+        <div className="flex flex-col gap-[20px] lg:px-[110px]">
 
           <div className="flex">
-            <div className="absolute left-[30px] text-[#31603D]"><IoCaretForwardSharp className="size-[30px]"/></div>
+            <div className="absolute left-[40px] lg:left-[140px] text-[#31603D]"><IoCaretForwardSharp className="size-[30px]"/></div>
             <div className="px-[70px]">
-            <div className="font-bold">How do i register as a vendor on MarketPod ?</div>
+            <div className="font-bold lg:text-[20px]">How do i register as a vendor on MarketPod ?</div>
             <div>Registering is easy! Just visit our vendor website and complete the registration form. Once submitted, our team will contact you to guide you through the onboarding process.</div>
             </div>
           </div>
 
           <div className="flex">
-            <div className="absolute left-[30px] text-[#31603D]"><IoCaretForwardSharp className="size-[30px]"/></div>
+            <div className="absolute left-[40px] lg:left-[140px] text-[#31603D]"><IoCaretForwardSharp className="size-[30px]"/></div>
             <div className="px-[70px]">
-            <div className="font-bold">What is the payout plan for vendors ?</div>
+            <div className="font-bold lg:text-[20px]">What is the payout plan for vendors ?</div>
             <div>Vendors receive payment immediately after each completed transaction, making it easy to track your earnings and stay on top of your finances.</div>
             </div>
           </div>
 
           <div className="flex">
-            <div className="absolute left-[30px] text-[#31603D]"><IoCaretForwardSharp className="size-[30px]"/></div>
+            <div className="absolute left-[40px] lg:left-[140px] text-[#31603D]"><IoCaretForwardSharp className="size-[30px]"/></div>
             <div className="px-[70px]">
-            <div className="font-bold">Are there any fees attached to registration ?</div>
+            <div className="font-bold lg:text-[20px]">Are there any fees attached to registration ?</div>
             <div>No, registration is completely free! There are no upfront fees to join our platform.</div>
             </div>
           </div>
@@ -116,9 +116,9 @@ function Landing() {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row lg:items-center mb-[30px]">
+      <div className="flex flex-col lg:flex-row lg:items-center mb-[30px] lg:mr-[70px] lg:ml-[70px]">
         <div className="flex justify-center px-[20px] mb-[30px] lg:hidden"><img src={aboutus} className=""/></div>
-        <div className="hidden flex justify-center px-[20px] mb-[30px] lg:flex size-[200%]"><img src={aboutus2} className=""/></div>
+        <div className="hidden flex justify-center px-[20px] mb-[30px] lg:flex size-[500%]"><img src={aboutus2} className=""/></div>
         <div className="flex flex-col px-[20px]">
           <div className="text-[#31603D] font-bold">Who we are ?</div>
           <div className="font-bold text-[25px]">About Us</div>
