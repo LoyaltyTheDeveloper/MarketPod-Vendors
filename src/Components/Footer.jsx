@@ -5,6 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 import { LiaFacebook } from "react-icons/lia";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { RiTwitterXLine } from "react-icons/ri";
+import { RiTiktokLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -17,6 +18,8 @@ function Footer() {
             <div className="flex flex-col gap-[20px]">
                 <h1 className="text-[20px] font-bold">Market Pod</h1>
                 <Link to="/aboutus"><p>About Us</p></Link>
+                <Link to="/aboutus"><p>Shop Groceries</p></Link>
+                <Link to="/aboutus"><p>Register as Vendors</p></Link>
             </div>
             <div className="flex flex-col gap-[20px]">
                 <h1 className="text-[20px] font-bold">Legal</h1>
@@ -36,6 +39,7 @@ function Footer() {
                 <div className="flex gap-[5px] items-center"><LiaFacebook className="size-[20px]"/><div>FaceBook</div></div>
                 <div className="flex gap-[5px] items-center"><AiOutlineYoutube className="size-[20px]"/><div>YouTube</div></div>
                 <div className="flex gap-[5px] items-center"><RiTwitterXLine className="size-[20px]"/><div>Twitter</div></div>
+                <div className="flex gap-[5px] items-center"><RiTiktokLine className="size-[20px]"/><div>Tiktok</div></div>
             </div>
         </div>
     </div>
