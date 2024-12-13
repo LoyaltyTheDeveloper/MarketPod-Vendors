@@ -17,9 +17,9 @@ function Footer() {
         <div className="flex gap-[60px] flex-wrap ml-[40px] lg:ml-auto lg:mr-[40px] mt-[-70px] lg:mt-[40px]">
             <div className="flex flex-col gap-[20px]">
                 <h1 className="text-[20px] font-bold">Market Pod</h1>
-                <Link to="/aboutus"><p>About Us</p></Link>
-                <Link to="/aboutus"><p>Shop Groceries</p></Link>
-                <Link to="/aboutus"><p>Register as Vendors</p></Link>
+                <a href="/aboutus">About Us</a>
+                <a href="/">Shop Groceries</a>
+                <a href="/register">Register as Vendor</a>
             </div>
             <div className="flex flex-col gap-[20px]">
                 <h1 className="text-[20px] font-bold">Legal</h1>

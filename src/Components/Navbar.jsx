@@ -1,9 +1,12 @@
 import React from 'react'
 import pod from '../assets/Podlogo.svg';
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 function Navbar() {
+  const navigate = useNavigate();
+
   return (<>
    <nav className="bg-white z-50 fixed shadow-md overflow-x-hidden overflow-y-hidden w-full">
     <div className="mx-auto py-[13px] my-auto">
@@ -12,8 +15,11 @@ function Navbar() {
 
             
             <div className="absolute left-6 ml-[-20px] flex justify-center lg:ml-[-10px]">
+              <a href='/'>
              <img src={pod} className="size-[150px]"/>
+             </a>
            </div>
+          
 
            <div className="hidden lg:flex lg:gap-x-[40px]">
            <Link to="/register"><div className="flex">Register</div></Link>
