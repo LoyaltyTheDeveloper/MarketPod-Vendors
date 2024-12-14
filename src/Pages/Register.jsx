@@ -19,19 +19,24 @@ function Register() {
   const items = ["Produce", "Meat & Seafood", "Diary & Eggs", "Herbs & Spice", "Oil & Vinegar", "Beverage & Packed Foods", "Plasticware & Bags", "Laundry", "Health & Beauty", "Baby & Kids", "Stationery"];
 
   const [selectedItems, setSelectedItems] = useState([]);
-  const [selectedBank, setSelectedBank] = useState(null);
+  const [selectedBank, setSelectedBank] = useState('');
   const [businessName, setBusinessName] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [storeAddress, setStoreAddress] = useState('');
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
-  const [years, setYears] = useState('');
+  const [years, setYears] = useState();
   const [idType, setIdType] = useState('');
-  const [idNumber, setIdNumber] = useState('');
-  const [primaryContact, setPrimaryContact] = useState('');
-  const [alternateContact, setAlternateContact] = useState('');
+  const [idNumber, setIdNumber] = useState();
+  const [phonePrimary, setPhonePrimary] = useState();
+  const [phoneAlternate, setPhoneAlternate] = useState();
   const [email, setEmail] = useState('');
+  const [whatsApp, setWhatsapp] = useState();
+  const [openingTime, setOpeningTime] = useState('');
+  const [closingTime, setClosingTime] = useState('');
+  const [accountNumber, setAccountNumber] = useState();
+  const [accountName, setAccountName] = useState('');
 
   const toggleSelection = (item) => {
     setSelectedItems((prevSelected) =>
@@ -43,19 +48,14 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedItems.length === 0) {
-      alert("Please select at least one item.");
+    if (selectedItems.length === 0 || !selectedBank || businessName === '' || firstName === '' || lastName === '' || storeAddress === '' || state === '' || country === '' || years === null || idType === '' || idNumber === null || phonePrimary === null || phoneAlternate === null || email === '' || whatsApp === null || days === '' || openingTime === '' || closingTime === '' || selectedBank === '' || accountNumber === null || accountName === '') {
+      alert("Fill in required fields");
+      console.error;
       return;
     }
-    console.log("Selected Items:", selectedItems);
-    alert(`Submitted items: ${selectedItems.join(", ")}`);
-
-    if (!selectedBank) {
-      alert("Please select a bank!");
-      return;
-    }
-    console.log("Selected Bank:", selectedBank);
-    console.log(days);
+    // console.log(selectedItems, businessName, firstName, lastName, storeAddress, state, country, years, idType, idNumber, phonePrimary, phoneAlternate, email, whatsApp, days, openingTime, closingTime, selectedBank, accountNumber, accountName);
+    alert("Success");
+    
 
   };
   const goHome = () => {
@@ -213,6 +213,8 @@ const options = banks.map((option) => {
         <input
           type="text"
           id="businessName"
+          value={businessName}
+          onChange={(e) => setBusinessName(e.target.value)}
           className="border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400 "
           placeholder="Business Name"
         />
@@ -225,6 +227,8 @@ const options = banks.map((option) => {
           <input
             type="text"
             id="firstName"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="First Name"
           />
@@ -235,6 +239,8 @@ const options = banks.map((option) => {
           <input
             type="text"
             id="lastName"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Last Name"
           />
@@ -244,6 +250,8 @@ const options = banks.map((option) => {
           <input
             type="text"
             id="storeAddress"
+            value={storeAddress}
+            onChange={(e) => setStoreAddress(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Store Address (Street & City)"
           />
@@ -253,6 +261,8 @@ const options = banks.map((option) => {
           <input
             type="text"
             id="state"
+            value={state}
+            onChange={(e) => setState(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="State"
           />
@@ -262,6 +272,8 @@ const options = banks.map((option) => {
           <input
             type="text"
             id="Country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Country"
           />
@@ -272,6 +284,8 @@ const options = banks.map((option) => {
             type="number"
             min="0"
             id="years"
+            value={years}
+            onChange={(e) => setYears(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Years in Operation"
           />
@@ -280,14 +294,16 @@ const options = banks.map((option) => {
         <div className="flex-1">
         <select className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
                     required
+                    value={idType}
+                    onChange={(e) => setIdType(e.target.value)}
                     placeholder="ID Type"
                 >
                    <option className="text-gray-300" value="">ID Type</option>
-                   <option value="Zacrac">Business reg no</option>
-                   <option value="Diamond Image">NIN</option>
-                   <option value="St Jacobs">Driver License</option>
-                   <option value="Royal Birds">Passport</option>
-                   <option value="Deja Vu">State approved Market Affiliated body ID</option>
+                   <option value="Business reg no">Business reg no</option>
+                   <option value="NIN">NIN</option>
+                   <option value="Driver License">Driver License</option>
+                   <option value="Passort">Passport</option>
+                   <option value="State approved Market Affiliated body ID">State approved Market Affiliated body ID</option>
                   </select>
         </div>
 
@@ -296,6 +312,8 @@ const options = banks.map((option) => {
             type="number"
             min="0"
             id="idNumber"
+            value={idNumber}
+            onChange={(e) => setIdNumber(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="ID Number"
           />
@@ -318,6 +336,8 @@ const options = banks.map((option) => {
             type="number"
             min="0"
             id="phone"
+            value={phonePrimary}
+            onChange={(e) => setPhonePrimary(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Primary Contact Number"
           />
@@ -329,6 +349,8 @@ const options = banks.map((option) => {
             type="number"
             min="0"
             id="phone"
+            value={phoneAlternate}
+            onChange={(e) => setPhoneAlternate(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Alternate Contact Number"
           />
@@ -338,6 +360,8 @@ const options = banks.map((option) => {
           <input
             type="text"
             id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Email Address (Optional)"
           />
@@ -348,6 +372,8 @@ const options = banks.map((option) => {
             type="number"
             min="0"
             id="phone"
+            value={whatsApp}
+            onChange={(e) => setWhatsapp(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="WhatsApp or Phone"
           />
@@ -454,6 +480,8 @@ const options = banks.map((option) => {
           <input
             type="time"
             id="openingTime"
+            value={openingTime}
+            onChange={(e) => setOpeningTime(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Bank Name"
           />
@@ -475,6 +503,8 @@ const options = banks.map((option) => {
           <input
             type="time"
             id="closingTime"
+            value={closingTime}
+            onChange={(e) => setClosingTime(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Bank Name"
           />
@@ -523,6 +553,8 @@ const options = banks.map((option) => {
             type="number"
             min="0"
             id="bankAccount"
+            value={accountNumber}
+            onChange={(e) => setAccountNumber(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Bank Account Number"
           />
@@ -532,6 +564,8 @@ const options = banks.map((option) => {
           <input
             type="text"
             id="accountName"
+            value={accountName}
+            onChange={(e) => setAccountName(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Account Holder's Name"
           />
