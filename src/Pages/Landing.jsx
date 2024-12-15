@@ -17,6 +17,13 @@ function Landing() {
   const register =()=>{
     navigate("/register");
   }
+
+
+
+
+
+
+  
   return (<>
   <Navbar/>
     <div className="pt-[90px]">

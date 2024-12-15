@@ -13,13 +13,20 @@ import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { styled, lighten, darken } from '@mui/system';
+import 'ldrs/ring';
+import { ring } from 'ldrs';
+import { toast } from 'react-hot-toast';
+
+
+
 
 function Register() {
+  ring.register()
   const navigate = useNavigate();
   const items = ["Produce", "Meat & Seafood", "Diary & Eggs", "Herbs & Spice", "Oil & Vinegar", "Beverage & Packed Foods", "Plasticware & Bags", "Laundry", "Health & Beauty", "Baby & Kids", "Stationery"];
 
-  const [selectedItems, setSelectedItems] = useState([]);
-  const [selectedBank, setSelectedBank] = useState('');
+  const [products, setSelectedItems] = useState([]);
+  const [bankName, setSelectedBank] = useState('');
   const [businessName, setBusinessName] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -37,6 +44,7 @@ function Register() {
   const [closingTime, setClosingTime] = useState('');
   const [accountNumber, setAccountNumber] = useState();
   const [accountName, setAccountName] = useState('');
+  const [isPending, setIsPending] = useState(false);
 
   const toggleSelection = (item) => {
     setSelectedItems((prevSelected) =>
@@ -47,15 +55,60 @@ function Register() {
   };
 
   const handleSubmit = (e) => {
+    setIsPending(true);
     e.preventDefault();
-    if (selectedItems.length === 0 || !selectedBank || businessName === '' || firstName === '' || lastName === '' || storeAddress === '' || state === '' || country === '' || years === null || idType === '' || idNumber === null || phonePrimary === null || phoneAlternate === null || email === '' || whatsApp === null || days === '' || openingTime === '' || closingTime === '' || selectedBank === '' || accountNumber === null || accountName === '') {
-      alert("Fill in required fields");
+    if (products.length === 0 || !bankName || businessName === '' || firstName === '' || lastName === '' || storeAddress === '' || state === '' || country === '' || years === null || idType === '' || idNumber === null || phonePrimary === null || phoneAlternate === null || email === '' || whatsApp === null || activeDays === '' || openingTime === '' || closingTime === '' || accountNumber === null || accountName === '') {
+      toast.error("Fill in all required fields");
+      setIsPending(false);
       console.error;
       return;
     }
-    // console.log(selectedItems, businessName, firstName, lastName, storeAddress, state, country, years, idType, idNumber, phonePrimary, phoneAlternate, email, whatsApp, days, openingTime, closingTime, selectedBank, accountNumber, accountName);
-    alert("Success");
-    
+    const formData = {
+      businessName,
+      firstName,
+      lastName,
+      storeAddress,
+      state,
+      country,
+      years,
+      idType,
+      idNumber,
+      phonePrimary,
+      phoneAlternate,
+      email,
+      whatsApp,
+      activeDays,
+      openingTime,
+      closingTime,
+      bankName,
+      accountNumber,
+      accountName,
+      products
+    };
+
+    fetch('https://test.tonyicon.com.ng/onboard-vendor', { 
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+    .then((response) => response.json())
+          .then((data) => {
+            if (data.status === true) {
+              setIsPending(false);
+              toast.success(data.message);
+              navigate('/');
+            } else {
+             toast.error(data.message);
+              setIsPending(false);
+              return;
+            }
+          })
+          .catch((error) => {
+            toast.error('An error occurred. Please try again');
+            setIsPending(false);
+            });
 
   };
   const goHome = () => {
@@ -86,9 +139,9 @@ const names = [
   'Sunday'
 ];
 
-function getStyles(name, days, theme) {
+function getStyles(name, activeDays, theme) {
   return {
-    fontWeight: days.includes(name)
+    fontWeight: activeDays.includes(name)
       ? theme.typography.fontWeightMedium
       : theme.typography.fontWeightRegular,
   };
@@ -96,7 +149,7 @@ function getStyles(name, days, theme) {
 
  
 const theme = useTheme();
-const [days, setDays] = React.useState([]);
+const [activeDays, setDays] = React.useState([]);
 
 const handleChange = (event) => {
   const {
@@ -398,7 +451,7 @@ const options = banks.map((option) => {
       type="button"
       onClick={() => toggleSelection(item)}
       className={`px-6 py-2 border border-black rounded-[30px] ${
-        selectedItems.includes(item)
+        products.includes(item)
           ? "bg-[#31603D] text-white"
           : "text-gray-800"
       }`}
@@ -432,7 +485,7 @@ const options = banks.map((option) => {
         <Select
           multiple
           displayEmpty
-          value={days}
+          value={activeDays}
           onChange={handleChange}
           input={<OutlinedInput />}
           renderValue={(selected) => {
@@ -452,7 +505,7 @@ const options = banks.map((option) => {
             <MenuItem
               key={name}
               value={name}
-              style={getStyles(name, days, theme)}
+              style={getStyles(name, activeDays, theme)}
             >
               {name}
             </MenuItem>
@@ -580,15 +633,22 @@ const options = banks.map((option) => {
 By proceeding you agree to the <p className="underline text-[#31603D]">Privacy Policy</p> and <p className="underline text-[#31603D]">Terms of Service</p>
   </div>
 
-  <div className="flex justify-center mb-[30px] lg:flex lg:justify-start lg:p-4"><button type="submit" onClick={handleSubmit} className="text-[white] px-[120px] py-3 lg:px-40 rounded-[25px] border border-[#31603D] bg-[#31603D] font-bold">Proceed</button></div>
+  {!isPending &&<div className="flex justify-center mb-[30px] lg:flex lg:justify-start lg:p-4"><button type="submit" onClick={handleSubmit} className="hover:bg-[green] text-[white] px-[120px] py-3 lg:px-40 rounded-[25px] border border-[#31603D] bg-[#31603D] font-bold">Proceed</button></div>}
+  {isPending &&<div className="flex items-center justify-center mb-[30px] lg:flex lg:justify-start lg:p-4"><button disabled className="opacity-[80%] text-[white] px-[140px] py-3 lg:px-40 rounded-[25px] border border-[#31603D] bg-[#31603D] font-bold"><l-ring
+  size="20"
+  stroke="3"
+  bg-opacity="0"
+  speed="2" 
+  color="white" 
+></l-ring></button></div>}
     </div>
 
+    
 
     </div>
-    <div className="bg-[white] sticky lg:overflow-x-hidden lg:overflow-y-hidden lg:w-full"><Footer/></div>
-  </div>
 
-  
+    {/* <div className="bg-[white] sticky lg:overflow-x-hidden lg:overflow-y-hidden lg:w-full"><Footer/></div> */}
+    </div>
   </>)
 }
 
