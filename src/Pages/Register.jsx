@@ -16,11 +16,28 @@ import { styled, lighten, darken } from '@mui/system';
 import 'ldrs/ring';
 import { ring } from 'ldrs';
 import { toast } from 'react-hot-toast';
-
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 
 
 function Register() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
+
   ring.register()
   const navigate = useNavigate();
   const items = ["Produce", "Meat & Seafood", "Diary & Eggs", "Herbs & Spice", "Oil & Vinegar", "Beverage & Packed Foods", "Plasticware & Bags", "Laundry", "Health & Beauty", "Baby & Kids", "Stationery"];
@@ -55,6 +72,7 @@ function Register() {
   };
 
   const handleSubmit = (e) => {
+  
     setIsPending(true);
     e.preventDefault();
     if (products.length === 0 || !bankName || businessName === '' || firstName === '' || lastName === '' || storeAddress === '' || state === '' || country === '' || years === null || idType === '' || idNumber === null || phonePrimary === null || phoneAlternate === null || email === '' || whatsApp === null || activeDays === '' || openingTime === '' || closingTime === '' || accountNumber === null || accountName === '') {
@@ -97,7 +115,7 @@ function Register() {
           .then((data) => {
             if (data.status === true) {
               setIsPending(false);
-              toast.success(data.message);
+              setOpen(true);
               navigate('/');
             } else {
              toast.error(data.message);
@@ -643,11 +661,32 @@ By proceeding you agree to the <p className="underline text-[#31603D]">Privacy 
 ></l-ring></button></div>}
     </div>
 
-    
 
     </div>
+    <React.Fragment>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          <div className="flex justify-center font-bold">Registration Successful</div>
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description" className="flex text-center">
+            <div className="text-[13px] lg:text-[15px]">
+          Your registration is successful, Our team would verify
+          the submitted details and reach out to you within 3-5 
+          business days. Thank you for choosing MarketPod !
+          </div>
+          </DialogContentText>
+        </DialogContent>
+        <div className="flex justify-center mb-[30px] lg:flex lg:p-4"><button onClick={handleClose} className="flex justify-center text-[white] px-[80px] lg:px-[140px] py-3 lg:px-40 rounded-[25px] border border-[#31603D] bg-[#31603D] font-bold">Continue</button></div>
+      </Dialog>
+    </React.Fragment>
 
-    {/* <div className="bg-[white] sticky lg:overflow-x-hidden lg:overflow-y-hidden lg:w-full"><Footer/></div> */}
+    <div className="bg-[white] sticky lg:overflow-x-hidden lg:overflow-y-hidden lg:w-full"><Footer/></div>
     </div>
   </>)
 }

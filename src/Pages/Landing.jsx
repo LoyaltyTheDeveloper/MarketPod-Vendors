@@ -32,7 +32,7 @@ function Landing() {
 
       <div className="absolute top-[100px]">
         <div className="px-[40px] py-[40px] lg:px-[100px] lg:py-[130px]">
-      <div className="text-[30px] text-[white] font-bold w-[250px] lg:text-[60px] lg:w-[500px]">Increase Your Stall Sales</div>
+      <div className="text-[30px] text-[white] font-bold w-[250px] lg:text-[60px] lg:w-[500px] font-montserrat">Increase Your Stall Sales</div>
       <div className="text-[white] text-[15px]">With MarketPod</div>
       <div className="mt-[20px] flex gap-x-[10px] lg:mt-[30px]">
         <button onClick={register} className="text-[white] border border-[#31603D] bg-[#31603D] px-[18px] py-[8px] rounded-[22px] text-[12px] lg:text-[15px]">Register as a Vendor</button>
