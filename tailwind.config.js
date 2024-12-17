@@ -24,6 +24,7 @@ export default {
         oswald: ['Oswald', 'sans-serif'],
         fira: ['Fira Code', 'monospace'],
         source: ['Source Code Pro', 'monospace'],
+        bitter: ['Bitter', 'serif'],
       },
     },
   },

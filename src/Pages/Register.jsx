@@ -52,16 +52,19 @@ function Register() {
   const [country, setCountry] = useState('');
   const [years, setYears] = useState();
   const [idType, setIdType] = useState('');
-  const [idNumber, setIdNumber] = useState();
-  const [phonePrimary, setPhonePrimary] = useState();
-  const [phoneAlternate, setPhoneAlternate] = useState();
+  const [idNumber, setIdNumber] = useState('');
+  const [phonePrimary, setPhonePrimary] = useState('');
+  const [phoneAlternate, setPhoneAlternate] = useState('');
   const [email, setEmail] = useState('');
-  const [whatsApp, setWhatsapp] = useState();
+  const [whatsapp, setWhatsapp] = useState('');
   const [openingTime, setOpeningTime] = useState('');
   const [closingTime, setClosingTime] = useState('');
-  const [accountNumber, setAccountNumber] = useState();
+  const [accountNumber, setAccountNumber] = useState('');
   const [accountName, setAccountName] = useState('');
   const [isPending, setIsPending] = useState(false);
+
+const theme = useTheme();
+const [activeDays, setDays] = React.useState([]);
 
   const toggleSelection = (item) => {
     setSelectedItems((prevSelected) =>
@@ -75,7 +78,7 @@ function Register() {
   
     setIsPending(true);
     e.preventDefault();
-    if (products.length === 0 || !bankName || businessName === '' || firstName === '' || lastName === '' || storeAddress === '' || state === '' || country === '' || years === null || idType === '' || idNumber === null || phonePrimary === null || phoneAlternate === null || email === '' || whatsApp === null || activeDays === '' || openingTime === '' || closingTime === '' || accountNumber === null || accountName === '') {
+    if (products.length === 0 || !bankName || businessName === '' || firstName === '' || lastName === '' || storeAddress === '' || state === '' || country === '' || years === null || idType === '' || idNumber === '' || phonePrimary === '' || phoneAlternate === '' || email === '' || whatsapp === '' || activeDays === '' || openingTime === '' || closingTime === '' || accountNumber === '' || accountName === '') {
       toast.error("Fill in all required fields");
       setIsPending(false);
       console.error;
@@ -94,7 +97,7 @@ function Register() {
       phonePrimary,
       phoneAlternate,
       email,
-      whatsApp,
+      whatsapp,
       activeDays,
       openingTime,
       closingTime,
@@ -104,12 +107,31 @@ function Register() {
       products
     };
 
-    fetch('https://test.tonyicon.com.ng/onboard-vendor', { 
+    fetch('https://test.tonyicon.com.ng/site/onboard-vendor', { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(businessName,
+        firstName,
+        lastName,
+        storeAddress,
+        state,
+        country,
+        years,
+        idType,
+        idNumber,
+        phonePrimary,
+        phoneAlternate,
+        email,
+        whatsapp,
+        activeDays,
+        openingTime,
+        closingTime,
+        bankName,
+        accountNumber,
+        accountName,
+        products),
     })
     .then((response) => response.json())
           .then((data) => {
@@ -166,8 +188,8 @@ function getStyles(name, activeDays, theme) {
 }
 
  
-const theme = useTheme();
-const [activeDays, setDays] = React.useState([]);
+// const theme = useTheme();
+// const [activeDays, setDays] = React.useState([]);
 
 const handleChange = (event) => {
   const {
@@ -260,7 +282,7 @@ const options = banks.map((option) => {
 
       <div>
     <div><img src={register1} className="w-full object-cover md:hidden lg:hidden"/></div>
-    <div className="w-full max-w-md mx-auto h-[70%]"><img src={vendor} className="hidden w-full object-cover md:flex lg:flex h-full"/></div>
+    {/* <div className="w-full max-w-md mx-auto h-[70%]"><img src={vendor} className="hidden w-full object-cover md:flex lg:flex h-full"/></div> */}
     </div>
 
     <div className="lg:px-[150px] lg:overflow-y-scroll">
@@ -270,15 +292,15 @@ const options = banks.map((option) => {
     </div>
 
     <div className="mt-[35px] flex flex-col justify-center items-center">
-        <h3 className="text-[#31603D] font-semibold">Let's get you started</h3>
-        <h1 className="font-bold text-[25px]">Register as a vendor</h1>
+        <h3 className="text-[#31603D] font-semibold font-sans">Let's get you started</h3>
+        <h1 className="font-bold text-[25px] font-bitter">Register as a vendor</h1>
     </div>
 
 <form>
     <div className="flex flex-col space-y-4 p-4 mb-[10px]">
       {/* First Field */}
       <div className="flex flex-col">
-        <label className="text-gray-500 font-bold text-[20px] mb-[20px]">
+        <label className="font-bitter text-gray-500 font-bold text-[20px] mb-[20px]">
           Business Information
         </label>
         <input
@@ -380,7 +402,7 @@ const options = banks.map((option) => {
 
         <div className="flex-1">
           <input
-            type="number"
+            type="text"
             min="0"
             id="idNumber"
             value={idNumber}
@@ -395,7 +417,7 @@ const options = banks.map((option) => {
 
     <div className="flex flex-col space-y-4 p-4">
       {/* First Field */}
-        <label className="text-gray-500 font-bold text-[20px]">
+        <label className="font-bitter text-gray-500 font-bold text-[20px]">
           Contact Details
         </label>
 
@@ -404,7 +426,7 @@ const options = banks.map((option) => {
         {/* Field 1 */}
         <div className="flex-1">
           <input
-            type="number"
+            type="text"
             min="0"
             id="phone"
             value={phonePrimary}
@@ -417,7 +439,7 @@ const options = banks.map((option) => {
         {/* Field 2 */}
         <div className="flex-1">
           <input
-            type="number"
+            type="text"
             min="0"
             id="phone"
             value={phoneAlternate}
@@ -440,10 +462,10 @@ const options = banks.map((option) => {
 
         <div className="flex-1">
           <input
-            type="number"
+            type="text"
             min="0"
             id="phone"
-            value={whatsApp}
+            value={whatsapp}
             onChange={(e) => setWhatsapp(e.target.value)}
             className="w-full border border-gray-300 rounded-[30px] px-4 py-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="WhatsApp or Phone"
@@ -451,12 +473,11 @@ const options = banks.map((option) => {
         </div>
 
 
-
       </div>
     </div>
 
 <div className="p-4">
-    <label className="text-gray-500 font-bold text-[20px]">
+    <label className="font-bitter text-gray-500 font-bold text-[20px]">
           Products
         </label>
     <div className="space-y-4">
@@ -467,6 +488,8 @@ const options = banks.map((option) => {
     <button
       key={item}
       type="button"
+      value={products}
+      onChange={(e) => setSelectedItems(e.target.value)}
       onClick={() => toggleSelection(item)}
       className={`px-6 py-2 border border-black rounded-[30px] ${
         products.includes(item)
@@ -483,7 +506,7 @@ const options = banks.map((option) => {
 
 <div className="flex flex-col space-y-4 p-4">
       {/* First Field */}
-        <label className="text-gray-500 font-bold text-[20px]">
+        <label className="font-bitter text-gray-500 font-bold text-[20px]">
           Service Details
         </label>
 
@@ -540,7 +563,7 @@ const options = banks.map((option) => {
 
     <div className="">
       {/* First Field */}
-        <label className="text-gray-500 font-bold text-[20px]">
+        <label className="font-bitter text-gray-500 font-bold text-[20px]">
           Opening Time
         </label>
 
@@ -563,7 +586,7 @@ const options = banks.map((option) => {
 
     <div className="">
       {/* First Field */}
-        <label className="text-gray-500 font-bold text-[20px]">
+        <label className="font-bitter text-gray-500 font-bold text-[20px]">
           Closing Time
         </label>
 
@@ -587,7 +610,7 @@ const options = banks.map((option) => {
     
     <div className="flex flex-col space-y-4 p-4">
       {/* First Field */}
-        <label className="text-gray-500 font-bold text-[20px]">
+        <label className="font-bitter text-gray-500 font-bold text-[20px]">
           Banking & Payment Information
         </label>
 
@@ -621,7 +644,7 @@ const options = banks.map((option) => {
         {/* Field 2 */}
         <div className="flex-1">
           <input
-            type="number"
+            type="text"
             min="0"
             id="bankAccount"
             value={accountNumber}
@@ -647,11 +670,11 @@ const options = banks.map((option) => {
 
 </form>
 
-<div className="p-4 font-semibold flex flex-wrap lg:whitespace-nowrap">
+<div className="font-sans p-4 font-semibold flex flex-wrap lg:whitespace-nowrap">
 By proceeding you agree to the <p className="underline text-[#31603D]">Privacy Policy</p> and <p className="underline text-[#31603D]">Terms of Service</p>
   </div>
 
-  {!isPending &&<div className="flex justify-center mb-[30px] lg:flex lg:justify-start lg:p-4"><button type="submit" onClick={handleSubmit} className="hover:bg-[green] text-[white] px-[120px] py-3 lg:px-40 rounded-[25px] border border-[#31603D] bg-[#31603D] font-bold">Proceed</button></div>}
+  {!isPending &&<div className="font-sans flex justify-center mb-[30px] lg:flex lg:justify-start lg:p-4"><button type="submit" onClick={handleSubmit} className="hover:bg-[green] text-[white] px-[120px] py-3 lg:px-40 rounded-[25px] border border-[#31603D] bg-[#31603D] font-bold">Proceed</button></div>}
   {isPending &&<div className="flex items-center justify-center mb-[30px] lg:flex lg:justify-start lg:p-4"><button disabled className="opacity-[80%] text-[white] px-[140px] py-3 lg:px-40 rounded-[25px] border border-[#31603D] bg-[#31603D] font-bold"><l-ring
   size="20"
   stroke="3"
