@@ -112,33 +112,13 @@ const [activeDays, setDays] = React.useState([]);
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(businessName,
-        firstName,
-        lastName,
-        storeAddress,
-        state,
-        country,
-        years,
-        idType,
-        idNumber,
-        phonePrimary,
-        phoneAlternate,
-        email,
-        whatsapp,
-        activeDays,
-        openingTime,
-        closingTime,
-        bankName,
-        accountNumber,
-        accountName,
-        products),
+      body: JSON.stringify(formData),
     })
     .then((response) => response.json())
           .then((data) => {
             if (data.status === true) {
               setIsPending(false);
               setOpen(true);
-              navigate('/');
             } else {
              toast.error(data.message);
               setIsPending(false);
@@ -274,7 +254,9 @@ const options = banks.map((option) => {
     firstLetter: /[0-9]/.test(firstLetter) ? '0-9' : firstLetter,
     ...option,
   };
-});
+}
+
+);
 
   return (<>
   <div className="min-h-screen flex flex-col">
@@ -622,7 +604,7 @@ const options = banks.map((option) => {
       options={options.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
       groupBy={(option) => option.firstLetter}
       getOptionLabel={(option) => option.name}
-      onChange={(event, value) => setSelectedBank(value)}
+      onChange={(event, value) => setSelectedBank(value?.name || '')}
       sx={{
         "& .MuiOutlinedInput-root": {
          borderRadius: "30px"
@@ -705,7 +687,7 @@ By proceeding you agree to the <p className="underline text-[#31603D]">Privacy 
           </div>
           </DialogContentText>
         </DialogContent>
-        <div className="flex justify-center mb-[30px] lg:flex lg:p-4"><button onClick={handleClose} className="flex justify-center text-[white] px-[80px] lg:px-[140px] py-3 lg:px-40 rounded-[25px] border border-[#31603D] bg-[#31603D] font-bold">Continue</button></div>
+        <div className="flex justify-center mb-[30px] lg:flex lg:p-4"><button onClick={goHome} className="flex justify-center text-[white] px-[80px] lg:px-[140px] py-3 lg:px-40 rounded-[25px] border border-[#31603D] bg-[#31603D] font-bold">Continue</button></div>
       </Dialog>
     </React.Fragment>
 
