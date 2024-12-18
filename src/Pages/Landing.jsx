@@ -43,14 +43,14 @@ function Landing() {
 
       <div>
 
-      <div className="mt-[30px] mb-[30px] flex flex-col items-center px-[20px]">
+      <div className="mt-[40px] mb-[30px] flex flex-col items-center px-[20px]">
         <div className="text-[#31603D] font-semibold">What is MarketPod ?</div>
         <div className="text-[22px] font-bold lg:text-[30px] font-bitter">Get your products discovered</div>
         <div className="items-center text-center lg:px-[100px] font-sans">Our platform is a logistics and delivery service designed to help local market vendors in West Africa expand their reach and grow their businesses. By joining our network, vendors gain access to a wider customer base beyond the local market, allowing them to sell their fresh produce, pantry staples, and daily essentials to more people in their area. Our mission is to support local vendors by creating a reliable platform that connects them to customers who value fresh, local products but want the convenience of home delivery</div>
       </div>
     
 
-    <div className="flex flex-col justify-center">
+    <div className="mt-[60px] flex flex-col justify-center">
       <div className="flex justify-center font-bold text-[22px] mb-[15px] font-bitter">How do i join the movement ?</div>
       {/* cards */}
       <div className="flex justify-center items-center flex-col lg:flex-row gap-[20px]">
@@ -90,7 +90,7 @@ function Landing() {
 
       </div>
 
-      <div className="mt-[30px] mb-[30px]">
+      <div className="mt-[60px] mb-[30px]">
         <div className="flex justify-center text-[#31603D] font-semibold font-sans">You've got questions ? We've got answers</div>
         <div className="flex justify-center font-bold text-[22px] mb-[20px] lg:text-[25px] font-bitter">Frequently Asked Questions !</div>
 
