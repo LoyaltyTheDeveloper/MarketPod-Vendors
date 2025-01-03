@@ -107,7 +107,7 @@ const [activeDays, setDays] = React.useState([]);
       products
     };
 
-    fetch('https://test.tonyicon.com.ng/site/onboard-vendor', { 
+    fetch('https://apis.emarketpod.com/site/onboard-vendor', { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -127,6 +127,7 @@ const [activeDays, setDays] = React.useState([]);
           })
           .catch((error) => {
             toast.error('An error occurred. Please try again');
+            console.log(error);
             setIsPending(false);
             });
 

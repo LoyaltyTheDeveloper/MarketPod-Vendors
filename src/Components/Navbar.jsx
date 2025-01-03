@@ -24,8 +24,8 @@ function Navbar() {
            <div className="hidden text-[18px] lg:flex lg:gap-x-[40px] font-bold font-bitter">
            <Link to="/register"><div className="flex">Register</div></Link>
            <div className="flex">Company</div>
-           <div className="flex">FAQ</div>
-           <div className="flex">About</div>
+           <div className="flex"><Link to="/faq">FAQ</Link></div>
+           <div className="flex"><Link to="/aboutus">About</Link></div>
            </div>
 
           <div className="flex px-[15px] rounded-[25px] py-[10px] text-[white] bg-[#31603D] items-center absolute right-6">
