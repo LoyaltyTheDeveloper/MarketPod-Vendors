@@ -168,9 +168,7 @@ function getStyles(name, activeDays, theme) {
   };
 }
 
- 
-// const theme = useTheme();
-// const [activeDays, setDays] = React.useState([]);
+
 
 const handleChange = (event) => {
   const {
