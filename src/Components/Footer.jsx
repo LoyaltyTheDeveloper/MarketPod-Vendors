@@ -21,7 +21,7 @@ function Footer() {
                 <a href="/">Shop Groceries</a>
                 <a href="/register">Register as Vendor</a>
             </div>
-            <div className="flex flex-col gap-[20px} font-sans">
+            <div className="flex flex-col gap-[20px] font-sans">
                 <h1 className="text-[20px] font-bold">Legal</h1>
                 <Link to="/privacypolicy"><p>Privacy Policy</p></Link>
                 <p><Link to="/termsofuse">Terms of Use</Link></p>

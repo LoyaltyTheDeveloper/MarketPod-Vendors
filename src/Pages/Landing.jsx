@@ -42,7 +42,10 @@ function Landing() {
     <div className="pt-[90px]">
       <img src={hero} className="w-full hidden object-cover lg:flex"/>
       <img src={hero2} className="w-full object-cover lg:hidden"/>
-      <section ref={company}>
+
+
+   
+
       <div className="absolute top-[100px]">
         <div className="px-[40px] py-[40px] lg:px-[100px] lg:py-[130px]">
       <div className="text-[30px] text-[white] font-bold w-[250px] lg:text-[60px] lg:w-[500px] font-bitter">Increase Your Stall Sales</div>
@@ -53,16 +56,16 @@ function Landing() {
       </div>
       </div>
       </div>
-</section>
+
       <div>
 
-
+      <section ref={company}>
       <div className="mt-[40px] mb-[30px] flex flex-col items-center px-[20px]">
         <div className="text-[#31603D] font-semibold">What is MarketPod ?</div>
         <div className="text-[22px] font-bold lg:text-[30px] font-bitter">Get your products discovered</div>
-        <div className="items-center text-center lg:px-[100px] font-sans">Our platform is a logistics and delivery service designed to help local market vendors in West Africa expand their reach and grow their businesses. By joining our network, vendors gain access to a wider customer base beyond the local market, allowing them to sell their fresh produce, pantry staples, and daily essentials to more people in their area. Our mission is to support local vendors by creating a reliable platform that connects them to customers who value fresh, local products but want the convenience of home delivery</div>
+        <div className="items-center text-center lg:px-[100px] font-sans text-[16px] lg:text-[18px]">Our platform is a logistics and delivery service designed to help local market vendors in West Africa expand their reach and grow their businesses. By joining our network, vendors gain access to a wider customer base beyond the local market, allowing them to sell their fresh produce, pantry staples, and daily essentials to more people in their area. Our mission is to support local vendors by creating a reliable platform that connects them to customers who value fresh, local products but want the convenience of home delivery.</div>
       </div>
-    
+    </section>
 
     
 
@@ -147,7 +150,7 @@ function Landing() {
         <div className="flex flex-col px-[20px]">
           <div className="text-[#31603D] font-bold font-sans">Who we are ?</div>
           <div className="font-bold text-[25px] font-bitter">About Us</div>
-          <div className="mt-[25px] font-sans">Your friendly neighborhood spiderman Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</div>
+          <div className="mt-[25px] font-sans text-[22px lg:text-[px] text-[16px] lg:text-[18px]">MarketPod is revolutionizing grocery shopping in Nigeria by bringing the freshest market produce and everyday essentials straight to your doorstep. We partner with trusted local markets to deliver the best in-season produce, pantry staples, and household goods, ensuring quality and affordability. With our efficient delivery network, we serve homes and businesses across major Nigerian cities, making it easier than ever to shop local without leaving your comfort zone. At MarketPod, we’re committed to connecting you to the markets you love with just a few taps on your phone.</div>
         </div>
       </div>
       </section>

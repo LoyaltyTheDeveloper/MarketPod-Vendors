@@ -254,7 +254,6 @@ const options = banks.map((option) => {
     ...option,
   };
 }
-
 );
 
   return (<>
@@ -652,7 +651,7 @@ const options = banks.map((option) => {
 </form>
 
 <div className="font-sans p-4 font-semibold flex flex-wrap lg:whitespace-nowrap">
-By proceeding you agree to the <p className="underline text-[#31603D]">Privacy Policy</p> and <p className="underline text-[#31603D]">Terms of Service</p>
+By proceeding you agree to the <p className="underline text-[#31603D]"><Link to="/privacypolicy">Privacy Policy</Link></p> and <p className="underline text-[#31603D]"><Link to="/termsofuse">Terms of Service</Link></p>
   </div>
 
   {!isPending &&<div className="font-sans flex justify-center mb-[30px] lg:flex lg:justify-start lg:p-4"><button type="submit" onClick={handleSubmit} className="hover:bg-[green] text-[white] px-[120px] py-3 lg:px-40 rounded-[25px] border border-[#31603D] bg-[#31603D] font-bold">Proceed</button></div>}
