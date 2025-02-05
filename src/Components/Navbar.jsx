@@ -2,9 +2,9 @@ import React from 'react'
 import pod from '../assets/Podlogo.svg';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { Link, useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 
-
-function Navbar() {
+function Navbar({ scrollToSection }) {
   const navigate = useNavigate();
 
   return (<>
@@ -23,9 +23,9 @@ function Navbar() {
 
            <div className="hidden text-[18px] lg:flex lg:gap-x-[40px] font-bold font-bitter">
            <Link to="/register"><div className="flex">Register</div></Link>
-           <div className="flex">Company</div>
-           <div className="flex"><Link to="/faq">FAQ</Link></div>
-           <div className="flex"><Link to="/aboutus">About</Link></div>
+           <div className="flex cursor-pointer" onClick={() => scrollToSection("company")}>Company</div>
+           <div className="flex cursor-pointer" onClick={() => scrollToSection("faq")}>FAQ</div>
+           <div className="flex cursor-pointer" onClick={() => scrollToSection("about")}>About</div>
            </div>
 
           <div className="flex px-[15px] rounded-[25px] py-[10px] text-[white] bg-[#31603D] items-center absolute right-6">

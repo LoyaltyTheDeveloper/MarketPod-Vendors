@@ -11,6 +11,8 @@ import aboutus2 from '../assets/aboutus2.svg';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import { useNavigate } from 'react-router-dom';
+import { useRef } from "react";
+
 
 function Landing() {
   const navigate = useNavigate();
@@ -18,18 +20,29 @@ function Landing() {
     navigate("/register");
   }
 
+  const company = useRef(null);
+  const faq = useRef(null);
+  const about = useRef(null);
 
+  
+
+  const scrollToSection = (section) => {
+    if (section === "company") company.current?.scrollIntoView({ behavior: "smooth" });
+    if (section === "faq") faq.current?.scrollIntoView({ behavior: "smooth" });
+    if (section === "about") about.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
 
 
 
   
   return (<>
-  <Navbar/>
+  <Navbar scrollToSection={scrollToSection}/>
+
     <div className="pt-[90px]">
       <img src={hero} className="w-full hidden object-cover lg:flex"/>
       <img src={hero2} className="w-full object-cover lg:hidden"/>
-
+      <section ref={company}>
       <div className="absolute top-[100px]">
         <div className="px-[40px] py-[40px] lg:px-[100px] lg:py-[130px]">
       <div className="text-[30px] text-[white] font-bold w-[250px] lg:text-[60px] lg:w-[500px] font-bitter">Increase Your Stall Sales</div>
@@ -40,14 +53,17 @@ function Landing() {
       </div>
       </div>
       </div>
-
+</section>
       <div>
+
 
       <div className="mt-[40px] mb-[30px] flex flex-col items-center px-[20px]">
         <div className="text-[#31603D] font-semibold">What is MarketPod ?</div>
         <div className="text-[22px] font-bold lg:text-[30px] font-bitter">Get your products discovered</div>
         <div className="items-center text-center lg:px-[100px] font-sans">Our platform is a logistics and delivery service designed to help local market vendors in West Africa expand their reach and grow their businesses. By joining our network, vendors gain access to a wider customer base beyond the local market, allowing them to sell their fresh produce, pantry staples, and daily essentials to more people in their area. Our mission is to support local vendors by creating a reliable platform that connects them to customers who value fresh, local products but want the convenience of home delivery</div>
       </div>
+    
+
     
 
     <div className="mt-[60px] flex flex-col justify-center">
@@ -87,9 +103,9 @@ function Landing() {
 </div>
 </div>
 </div>
-
       </div>
-
+      
+      <section ref={faq}>
       <div className="mt-[60px] mb-[30px]">
         <div className="flex justify-center text-[#31603D] font-semibold font-sans">You've got questions ? We've got answers</div>
         <div className="flex justify-center font-bold text-[22px] mb-[20px] lg:text-[25px] font-bitter">Frequently Asked Questions !</div>
@@ -122,7 +138,9 @@ function Landing() {
 
         </div>
       </div>
+      </section>
 
+      <section ref={about}>
       <div className="flex flex-col lg:flex-row lg:items-center mb-[30px] lg:mr-[70px] lg:ml-[70px]">
         <div className="flex justify-center px-[20px] mb-[30px] lg:hidden"><img src={aboutus} className=""/></div>
         <div className="hidden flex justify-center px-[20px] mb-[30px] lg:flex size-[500%]"><img src={aboutus2} className=""/></div>
@@ -132,6 +150,7 @@ function Landing() {
           <div className="mt-[25px] font-sans">Your friendly neighborhood spiderman Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</div>
         </div>
       </div>
+      </section>
     </div>
     <Footer/>
   </>)
