@@ -23,23 +23,23 @@ function Footer() {
             </div>
             <div className="flex flex-col gap-[20px] font-sans">
                 <h1 className="text-[20px] font-bold">Legal</h1>
-                <Link to="/privacypolicy"><p>Privacy Policy</p></Link>
-                <p><Link to="/termsofuse">Terms of Use</Link></p>
+                <a href="/privacypolicy"><p>Privacy Policy</p></a>
+                <p><a href="/termsofuse">Terms of Use</a></p>
             </div>
             <div className="flex flex-col gap-[20px] font-sans">
                 <h1 className="text-[20px] font-bold">Get Help</h1>
-                <Link to="/faq"><p>FAQ</p></Link>
-                <Link to="/"><p>Chat</p></Link>
-                <Link to="/"><p>Email</p></Link>
+                <a href="/faq"><p>FAQ</p></a>
+                <a href="/"><p>Chat</p></a>
+                <a href="/"><p>Email</p></a>
             </div>
             <div className="flex flex-col gap-[20px] font-sans">
                 <h1 className="text-[20px] font-bold">Follow Our Socials</h1>
-                <div className="flex gap-[5px] items-center"><FaWhatsapp className="size-[20px]"/><div>WhatsApp</div></div>
-                <div className="flex gap-[5px] items-center"><FaInstagram className="size-[20px]" /><div>Instagram</div></div>
-                <div className="flex gap-[5px] items-center"><LiaFacebook className="size-[20px]"/><div>FaceBook</div></div>
-                <div className="flex gap-[5px] items-center"><AiOutlineYoutube className="size-[20px]"/><div>YouTube</div></div>
-                <div className="flex gap-[5px] items-center"><RiTwitterXLine className="size-[20px]"/><div>Twitter</div></div>
-                <div className="flex gap-[5px] items-center"><RiTiktokLine className="size-[20px]"/><div>Tiktok</div></div>
+                <div className="flex gap-[5px] items-center"><FaWhatsapp className="size-[20px]"/><a href=''>WhatsApp</a></div>
+                <div className="flex gap-[5px] items-center"><FaInstagram className="size-[20px]" /><a href='https://www.instagram.com/emarket_pod?igsh=MW13czZrbjdwMTA5bA=='>Instagram</a></div>
+                <div className="flex gap-[5px] items-center"><LiaFacebook className="size-[20px]"/><a href=''>FaceBook</a></div>
+                <div className="flex gap-[5px] items-center"><AiOutlineYoutube className="size-[20px]"/><a href=''>YouTube</a></div>
+                <div className="flex gap-[5px] items-center"><RiTwitterXLine className="size-[20px]"/><a href='https://twitter.com/eMarket_Pod?t=XOcBPbA75uA44OTonxOnJQ&s=08'>Twitter</a></div>
+                <div className="flex gap-[5px] items-center"><RiTiktokLine className="size-[20px]"/>< a href='https://vm.tiktok.com/ZMkgFTrxT/'>Tiktok</a></div>
             </div>
         </div>
     </div>
