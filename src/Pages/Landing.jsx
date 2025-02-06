@@ -6,7 +6,7 @@ import card1 from '../assets/card1.svg';
 import card2 from '../assets/card2.svg';
 import card3 from '../assets/card3.svg';
 import { IoCaretForwardSharp } from "react-icons/io5";
-import aboutus from '../assets/aboutus.svg';
+import aboutus from '../assets/aboutus1.svg';
 import aboutus2 from '../assets/aboutus2.svg';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
@@ -52,7 +52,7 @@ function Landing() {
       <div className="text-[white] text-[15px] font-sans">With MarketPod</div>
       <div className="mt-[20px] flex gap-x-[10px] lg:mt-[30px]">
         <button onClick={register} className="text-[white] border border-[#31603D] bg-[#31603D] px-[18px] py-[8px] rounded-[22px] text-[12px] lg:text-[17px] lg:py-[10px] font-sans">Register as a Vendor</button>
-        <button className="text-[black] border border-[white] bg-[white] px-[27px] py-[8px] lg:px-[30px] rounded-[22px] text-[11px] flex items-center gap-x-[5px] font-semibold font-sans lg:text-[17px]">Learn More <FaYoutube className="size-[23px] text-[red]"/></button>
+      <a href="https://wa.me/2347014131367" target="_blank" rel="noopener noreferrer"> <button className="text-[black] border border-[white] bg-[white] px-[27px] py-[8px] lg:px-[30px] rounded-[22px] text-[11px] flex items-center gap-x-[5px] font-semibold font-sans lg:text-[17px]">Learn More <FaYoutube className="size-[23px] text-[red]"/></button></a>
       </div>
       </div>
       </div>

@@ -29,17 +29,17 @@ function Footer() {
             <div className="flex flex-col gap-[20px] font-sans">
                 <h1 className="text-[20px] font-bold">Get Help</h1>
                 <a href="/faq"><p>FAQ</p></a>
-                <a href="/"><p>Chat</p></a>
-                <a href="/"><p>Email</p></a>
+                <a href="https://wa.me/2347014131367" target="_blank" rel="noopener noreferrer"><p>Chat</p></a>
+                <a href="mailto:support@emarketpod.com" target="_blank" rel="noopener noreferrer"><p>Email</p></a>
             </div>
             <div className="flex flex-col gap-[20px] font-sans">
                 <h1 className="text-[20px] font-bold">Follow Our Socials</h1>
-                <div className="flex gap-[5px] items-center"><FaWhatsapp className="size-[20px]"/><a href=''>WhatsApp</a></div>
-                <div className="flex gap-[5px] items-center"><FaInstagram className="size-[20px]" /><a href='https://www.instagram.com/emarket_pod?igsh=MW13czZrbjdwMTA5bA=='>Instagram</a></div>
+                <div className="flex gap-[5px] items-center"><FaWhatsapp className="size-[20px]"/><a href='https://wa.me/2347014131367' target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+                <div className="flex gap-[5px] items-center"><FaInstagram className="size-[20px]" /><a href='https://www.instagram.com/emarket_pod?igsh=MW13czZrbjdwMTA5bA==' target="_blank" rel="noopener noreferrer">Instagram</a></div>
                 <div className="flex gap-[5px] items-center"><LiaFacebook className="size-[20px]"/><a href=''>FaceBook</a></div>
                 <div className="flex gap-[5px] items-center"><AiOutlineYoutube className="size-[20px]"/><a href=''>YouTube</a></div>
-                <div className="flex gap-[5px] items-center"><RiTwitterXLine className="size-[20px]"/><a href='https://twitter.com/eMarket_Pod?t=XOcBPbA75uA44OTonxOnJQ&s=08'>Twitter</a></div>
-                <div className="flex gap-[5px] items-center"><RiTiktokLine className="size-[20px]"/>< a href='https://vm.tiktok.com/ZMkgFTrxT/'>Tiktok</a></div>
+                <div className="flex gap-[5px] items-center"><RiTwitterXLine className="size-[20px]"/><a href='https://twitter.com/eMarket_Pod?t=XOcBPbA75uA44OTonxOnJQ&s=08' target="_blank" rel="noopener noreferrer">Twitter</a></div>
+                <div className="flex gap-[5px] items-center"><RiTiktokLine className="size-[20px]"/>< a href='https://vm.tiktok.com/ZMkgFTrxT/' target="_blank" rel="noopener noreferrer">Tiktok</a></div>
             </div>
         </div>
     </div>
