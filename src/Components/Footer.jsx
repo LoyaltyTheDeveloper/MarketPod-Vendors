@@ -8,6 +8,7 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { RiTiktokLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
+
 function Footer() {
   return (<>
     <div className="flex flex-col lg:flex-row">
