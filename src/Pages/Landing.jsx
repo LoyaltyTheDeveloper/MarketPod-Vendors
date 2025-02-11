@@ -90,7 +90,7 @@ function Landing() {
         <img className="rounded-t-lg object-cover h-[200px]" src={card2} alt="" />
 
     <div className="flex flex-col justify-center items-center">
-            <h5 className="mb-1 text-[22px] font-bold tracking-tight text-gray-900 text-[black] mt-[10px] font-bitter">Recieve and Manage Orders</h5>
+            <h5 className="mb-1 text-[22px] font-bold tracking-tight text-gray-900 text-[black] mt-[10px] font-bitter">Receive and Manage Orders</h5>
         <p className="mb-3 font-normal text-[black] px-[20px] text-center font-sans">Once approved, you’ll begin receiving orders. Gather and package the items promptly, ensuring accuracy and quality. Once the order is ready, coordinate with the delivery team for a smooth handoff.</p>
         
     </div>
