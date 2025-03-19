@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        saeada: ['LT Saeada', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
         lobster: ['Lobster', 'cursive'],
         opensans: ['Open Sans', 'sans-serif'],
@@ -25,6 +26,12 @@ export default {
         fira: ['Fira Code', 'monospace'],
         source: ['Source Code Pro', 'monospace'],
         bitter: ['Bitter', 'serif'],
+      },
+      fontWeight: {
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
       },
     },
   },

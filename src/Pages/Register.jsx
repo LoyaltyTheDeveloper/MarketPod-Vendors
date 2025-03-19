@@ -273,14 +273,14 @@ const options = banks.map((option) => {
 
     <div className="mt-[35px] flex flex-col justify-center items-center">
         <h3 className="text-[#31603D] font-semibold font-sans">Let's get you started</h3>
-        <h1 className="font-bold text-[25px] font-bitter">Register as a vendor</h1>
+        <h1 className="font-bold text-[25px] font-saeada">Register as a vendor</h1>
     </div>
 
 <form>
     <div className="flex flex-col space-y-4 p-4 mb-[10px]">
       {/* First Field */}
       <div className="flex flex-col">
-        <label className="font-bitter text-gray-500 font-bold text-[20px] mb-[20px]">
+        <label className="font-saeada text-gray-500 font-bold text-[20px] mb-[20px]">
           Business Information
         </label>
         <input
@@ -397,7 +397,7 @@ const options = banks.map((option) => {
 
     <div className="flex flex-col space-y-4 p-4">
       {/* First Field */}
-        <label className="font-bitter text-gray-500 font-bold text-[20px]">
+        <label className="font-saeada text-gray-500 font-bold text-[20px]">
           Contact Details
         </label>
 
@@ -457,7 +457,7 @@ const options = banks.map((option) => {
     </div>
 
 <div className="p-4">
-    <label className="font-bitter text-gray-500 font-bold text-[20px]">
+    <label className="font-saeada text-gray-500 font-bold text-[20px]">
           Products
         </label>
     <div className="space-y-4">
@@ -486,7 +486,7 @@ const options = banks.map((option) => {
 
 <div className="flex flex-col space-y-4 p-4">
       {/* First Field */}
-        <label className="font-bitter text-gray-500 font-bold text-[20px]">
+        <label className="font-saeada text-gray-500 font-bold text-[20px]">
           Service Details
         </label>
 
@@ -543,7 +543,7 @@ const options = banks.map((option) => {
 
     <div className="">
       {/* First Field */}
-        <label className="font-bitter text-gray-500 font-bold text-[20px]">
+        <label className="font-saeada text-gray-500 font-bold text-[20px]">
           Opening Time
         </label>
 
@@ -566,7 +566,7 @@ const options = banks.map((option) => {
 
     <div className="">
       {/* First Field */}
-        <label className="font-bitter text-gray-500 font-bold text-[20px]">
+        <label className="font-saeada text-gray-500 font-bold text-[20px]">
           Closing Time
         </label>
 
@@ -590,7 +590,7 @@ const options = banks.map((option) => {
     
     <div className="flex flex-col space-y-4 p-4">
       {/* First Field */}
-        <label className="font-bitter text-gray-500 font-bold text-[20px]">
+        <label className="font-saeada text-gray-500 font-bold text-[20px]">
           Banking & Payment Information
         </label>
 
