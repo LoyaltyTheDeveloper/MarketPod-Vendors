@@ -29,7 +29,7 @@ function Navbar({ scrollToSection }) {
            </div>
 
           <div className="flex px-[15px] rounded-[25px] py-[10px] text-[white] bg-[#31603D] items-center absolute right-6">
-            <button className="text-[12px] lg:text-[15px]">Shop Groceries</button>
+          <a href="https://emarketpod.com/"><button className="text-[12px] lg:text-[15px]">Shop Groceries</button></a> 
           </div>
             </div>
         </div>
