@@ -21,7 +21,7 @@ function Navbar({ scrollToSection }) {
            </div>
           
 
-           <div className="hidden text-[18px] lg:flex lg:gap-x-[40px] font-bold font-bitter">
+           <div className="hidden text-[18px] lg:flex lg:gap-x-[40px] font-bold font-saeada">
            <Link to="/register"><div className="flex">Register</div></Link>
            <div className="flex cursor-pointer" onClick={() => scrollToSection("company")}>Company</div>
            <div className="flex cursor-pointer" onClick={() => scrollToSection("faq")}>FAQ</div>
