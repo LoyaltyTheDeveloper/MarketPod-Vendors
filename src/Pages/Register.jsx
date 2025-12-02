@@ -274,10 +274,7 @@ const [activeDays, setDays] = React.useState([]);
     setIsPending(true);
     e.preventDefault();
 
-    console.log(formData);
-     console.log(formData2);
-     console.log(formData3);
-      console.log(formData4);
+    
 
     // const validationErrors = validate();
     // if (Object.keys(validationErrors).length > 0) {
